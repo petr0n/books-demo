@@ -5,7 +5,7 @@
 </header>
 <section class="books-wrapper">
 	<section class="willRead">
-		<h3>Books To Read</h3>
+		<h3>Books Toc Read</h3>
 		<pk-book [ngClass]="{'booktype-fic': book.bookType==='Fiction', 'booktype-non-fic':book.bookType==='Non-Fiction'}"
 		 *ngFor="let book of filterBooks('willRead')" [book]="book" (delete)="onBookDelete($event)" (markAsStarted)="onBookMarkAsStarted($event)"></pk-book>
 	</section>
