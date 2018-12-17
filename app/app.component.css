@@ -1,0 +1,71 @@
+/* RGB 
+$color1: rgba(159, 154, 164, 1);  gray        #1c1d21
+$color2: rgba(231, 207, 205, 1);  pink        #f1e3e4
+$color3: rgba(207, 216, 215, 1);  moss        #f9f7f3
+$color4: rgba(181, 201, 195, 1);  green       #b5c9c3
+$color5: rgba(202, 177, 189, 1);  dark-pink   #d81e5b
+*/
+
+/* RGB 
+$color1: rgba(28, 29, 33, 1);     darkgray  1c1d21
+$color2: rgba(15, 163, 177, 1);   teal      0fa3b1
+$color3: rgba(216, 30, 91, 1);    red       d81e5b
+$color4: rgba(249, 247, 243, 1);  offwhite  f9f7f3  
+$color5: rgba(241, 227, 228, 1);  pink      f1e3e4
+*/
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+:host {
+  font-family: 'Lato', sans-serif;
+  min-height: 100%;
+}
+.fixed-header {
+  background-color: #d81e5b;
+  border-bottom: 1px solid #f1e3e4;
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+}
+nav .icon {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+.fixed-header > header {
+  color: #f9f7f3;
+  padding: 10px;
+}
+.fixed-header > header > h1 a {
+  color: #f9f7f3;
+  font-size: 2em;
+}
+.add-book {
+  background-color: #0fa3b1;
+  height: 50px;
+  right: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  text-decoration: none;
+  text-align: center;
+  width: 50px;
+}
+.add-book i {
+  color: #f9f7f3;
+  display: block;
+}
+.add-book i:first-child {
+  margin-top: 10px;
+}
+/* section > header .description {
+  
+} */

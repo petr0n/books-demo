@@ -1,0 +1,40 @@
+<header 
+    [ngClass]="{'booktype-fic':bookType === 'Fiction', 'booktype-non-fic':bookType === 'Non-Fiction'}">
+    <h3>{{bookType}}</h3>
+    <h3>{{genre}}</h3>
+    <div class="genres">Currently in the queues: {{ books | genreList }}</div>
+</header>
+<section class="books-wrapper">
+  <section class="hasRead">
+      <h3>Books I've Read</h3>
+      <pk-book
+      [ngClass]="{'booktype-fic': book.bookType==='Fiction', 'booktype-non-fic':book.bookType==='Non-Fiction'}" 
+      *ngFor="let book of filterBooks('hasRead')"
+      [book]="book"
+      (delete)="onBookDelete($event)"></pk-book>
+    <!-- <pk-book
+      [ngClass]="{'booktype-fic': book.bookType==='Fiction', 'booktype-non-fic':book.bookType==='Non-Fiction'}" 
+      *ngFor="let book of books"
+      [book]="book"
+      (delete)="onBookDelete($event)"></pk-book> -->
+  </section>
+  <section class="isReading">
+      <h3>Books I'm Reading</h3>
+      <pk-book
+      [ngClass]="{'booktype-fic': book.bookType==='Fiction', 'booktype-non-fic':book.bookType==='Non-Fiction'}" 
+      *ngFor="let book of filterBooks('isReading')"
+      [book]="book"
+      (delete)="onBookDelete($event)"></pk-book>
+  </section>
+  <section class="willRead">
+      <h3>Books I Will Read</h3>
+      <pk-book
+      [ngClass]="{'booktype-fic': book.bookType==='Fiction', 'booktype-non-fic':book.bookType==='Non-Fiction'}" 
+      *ngFor="let book of filterBooks('willRead')"
+      [book]="book"
+      (delete)="onBookDelete($event)"></pk-book>
+  </section>
+</section>
+<footer>
+  <div class="footer-copy">Made by Peter Abeln</div>
+</footer>

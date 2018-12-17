@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "/Users/peter.abeln/Documents/petron/angularjs/books-demo"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.js": { "when": "$(basename).ts" },
+			"**/*.js.map": true,
+			"node_modules": true
+		}
+	}
+}

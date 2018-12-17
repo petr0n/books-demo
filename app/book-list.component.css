@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  flex-direction: column;
+  padding: 0 10px;
+  margin: 100px 0 20px;
+}
+header {
+  color: #1c1d21;
+}
+header.booktype-fic {
+  color: #53ace4;
+}
+header.booktype-non-fic {
+  color: #45bf94;
+}
+header > h2 {
+  font-size: 1.4em;
+}
+header > h2.error {
+  color: #d93a3e;
+}
+header .genres {
+  margin: 10px 0 20px;
+}
+section.books-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+section.books-wrapper > section {
+  display: flex;
+  flex-flow: column wrap;
+  width: 30%;
+  /*
+  align-content: flex-start; */
+}
+section.books-wrapper > section h3 {
+  border: 1px solid #0fa3b1;
+  border-radius: 3px;
+  background-color: #0fa3b1;
+  color: #1c1d21;
+  font-size: .7em;
+  padding: 3px;
+  text-align: center;
+}
+section > .book {
+  margin: 10px;
+}
+footer {
+  text-align: right;
+}
+footer .icon {
+  width: 64px;
+  height: 64px;
+  margin: 15px;
+}

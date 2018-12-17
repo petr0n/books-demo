@@ -1,0 +1,52 @@
+<header>
+  <h2>Add Book to Read</h2>
+</header>
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
+  <ul>
+    <li>
+      <label for="bookType">Book Type</label>
+      <select name="bookType" id="bookType" formControlName="bookType">
+        <option *ngFor="let bookType of lookupLists.bookTypes" value="{{bookType}}">{{bookType}}</option>
+      </select>
+    </li>
+    <li>
+      <label for="name">Title</label>
+      <input type="text" name="name" id="name" formControlName="name">
+      <div *ngIf="form.get('name').hasError('pattern')" class="error">
+        Name has invalid characters
+      </div>
+    </li>
+    <li>
+      <label for="genre">Genre</label>
+      <select name="genre" id="genre" formControlName="genre">
+        <option *ngFor="let genre of lookupLists.genres" value="{{genre}}">{{genre}}</option>
+      </select>
+    </li>
+    <li>
+      <label for="year">Publish Year</label>
+      <input type="text" name="year" id="year" maxlength="4" formControlName="year">
+      <div *ngIf="form.get('year').errors as yearErrors" class="error">
+        Must be between 
+        {{yearErrors.year.min}}
+        and 
+        {{yearErrors.year.max}}
+      </div>
+    </li>
+    <li>
+      <label for="readOnStart">Started reading on</label>
+      <my-date-picker name="readOnStart" [options]="myDatePickerOptions"
+                  formControlName="readOnStart" class="dpickr" (dateChanged)="onDateChanged($event)"></my-date-picker>
+    </li>
+    <li>
+        <label for="readOnFinish">Finished reading on</label>
+        <my-date-picker name="readOnFinish" [options]="myDatePickerOptions"
+                    formControlName="readOnFinish" class="dpickr"></my-date-picker>
+      </li>
+      <li>
+        <label for=""></label>
+        <button type="submit" [disabled]="!form.valid">Save</button>
+      </li>
+  </ul>
+</form>
