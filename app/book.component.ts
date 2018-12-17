@@ -9,11 +9,15 @@ export class BookComponent {
   @Input() book;
   @Output() delete = new EventEmitter();
   @Output() markAsRead = new EventEmitter();
+  @Output() markAsStarted = new EventEmitter();
 
   onDelete() {
     this.delete.emit(this.book);
   }
   onMarkAsRead(){
     this.markAsRead.emit(this.book);
+  }
+  onMarkAsStarted(){
+    this.markAsStarted.emit(this.book);
   }
 }

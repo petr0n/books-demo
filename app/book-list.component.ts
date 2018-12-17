@@ -39,6 +39,19 @@ export class BookListComponent {
         this.getBooks(this.bookType);
       });
   }
+  onBookMarkAsRead(book){
+    this.bookService.markAsRead(book)
+      .subscribe(() => {
+        this.getBooks(this.bookType);
+      });
+  }
+
+  onBookMarkAsStarted(book){
+    this.bookService.markAsStarted(book)
+      .subscribe(() => {
+        this.getBooks(this.bookType);
+      });
+  }
 
   getBooks(bookType) {
     this.bookType = bookType;

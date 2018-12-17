@@ -9,7 +9,9 @@
   <div>Finished reading on {{ book.readOnFinish | date }}</div>
 </ng-template>
 <div class="tools">
-    <i class="far fa-star"></i>
+    <a href="" [pkFav]="book.isFavorite">
+      <i class="far fa-star"></i>
+    </a>
   <!-- <svg
     [mwFavorite]="book.isFavorite"
     class="favorite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -19,9 +21,14 @@
   <a class="delete" (click)="onDelete()">
     remove <i class="fas fa-trash-alt"></i>
   </a>
-  <ng-template [ngIf]="book.readOnFinish === null">  
-    <a (click)="onMarkAsRead()" class="mark-as-read">
+  <ng-template [ngIf]="book.readOnFinish === null && book.readOnStart !== null">  
+    <a (click)="onMarkAsRead()" class="markAsRead">
       Mark As Read <i class="fas fa-check-square"></i>
     </a>
   </ng-template>
+  <ng-template [ngIf]="book.readOnStart === null && book.readOnFinish === null">  
+      <a (click)="onMarkAsStarted()" class="markAsStarted">
+        Mark As Started <i class="fas fa-play"></i>
+      </a>
+    </ng-template>
 </div>

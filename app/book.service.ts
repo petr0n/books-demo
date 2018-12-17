@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class BookService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient) {}
 
   get(bookType) {
     let getOptions = {
@@ -25,6 +26,18 @@ export class BookService {
   delete(book) {
     return this.http.delete(`books/${book.id}`);
   }
+
+  markAsRead(book) {
+    const params = new HttpParams().set('markAsRead', '1');
+    return this.http.post('books', book, {params});
+  }
+
+  markAsStarted(book) {
+    // console.log(book);
+    const params = new HttpParams().set('markAsStarted', '1');
+    return this.http.post('books', book, {params});
+  }
+
 }
 
 interface BooksResponse {

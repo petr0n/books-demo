@@ -1,4 +1,4 @@
-import { HttpEvent, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpEvent, HttpRequest, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { HttpBackend } from '@angular/common/http/src/backend';
@@ -9,6 +9,7 @@ export class FakeBackend implements HttpBackend {
       let responseOptions = {};
       switch (request.method) {
         case 'GET':
+          console.log(request.urlWithParams);
           if (request.urlWithParams.indexOf('bookType=') >= 0 || request.url === 'books') {
             let bookType;
             if (request.urlWithParams.indexOf('?') >= 0) {
@@ -43,9 +44,20 @@ export class FakeBackend implements HttpBackend {
           break;
         case 'POST':
           let book = request.body;
-          book.id = this._getNewId();
-          this._books.push(book);
-          responseOptions = {status: 201};
+          let params = request.params;
+          // console.log(params.get('markAsRead'));
+
+          if ( params.get('markAsRead') ) {
+            this._markAsRead(book.id);
+            responseOptions = {status: 200};
+          } else if ( params.get('markAsStarted') ) {
+            this._markAsStarted(book.id);
+            responseOptions = {status: 200};
+          } else {
+            book.id = this._getNewId();
+            this._books.push(book);
+            responseOptions = {status: 201};
+          }
           break;
         case 'DELETE':
           let id = parseInt(request.url.split('/')[1]);
@@ -73,7 +85,15 @@ export class FakeBackend implements HttpBackend {
     const book = this._books.find(book => book.id === id);
     const index = this._books.indexOf(book);
     if (index >= 0) {
-      this._books.splice(index, 1);
+      this._books[index].readOnFinish = this._getTodayAsString();
+    }
+  }
+
+  _markAsStarted(id) {
+    const book = this._books.find(book => book.id === id);
+    const index = this._books.indexOf(book);
+    if (index >= 0) {
+      this._books[index].readOnStart = this._getTodayAsString();
     }
   }
 
@@ -83,6 +103,14 @@ export class FakeBackend implements HttpBackend {
     } else {
       return 1;
     }
+  }
+
+  _getTodayAsString(){
+    const today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth()+1; //January is 0!
+    const yyyy = today.getFullYear();
+    return mm + '/' + dd + '/' + yyyy;
   }
 
   _books = [
