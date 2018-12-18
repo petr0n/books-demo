@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  padding: 10px;
+  margin-top: 80px;
+}
+header h2 {
+  font-size: 1.3em;
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  margin: 10px 0;
+  display: flex;
+}
+header {
+  color: #1c1d21;
+}
+label {
+  width: 200px;
+  color: #0fa3b1;
+}
+input, select {
+  background-color: #FFFFFF;
+  color: #1c1d21;
+  border-radius: 2px;
+  border: 1px solid #1c1d21;
+  padding: 6px;
+  width: 300px;
+}
+.ng-invalid:not(form):not(.ng-pristine):not(.required-invalid) {
+  border: 1px solid #d93a3e;
+}
+input[required].ng-invalid {
+  border-right: 5px solid #d93a3e;
+}
+input[required]:not(.required-invalid),
+input[required].ng-invalid:not(.required-invalid) {
+  border-right: 5px solid #37ad79;
+}
+.error {
+  color: #d93a3e;
+}
+.dpickr {
+  width: 130px !important;
+}
+#year {
+  width: 50px;
+}
+button[type=submit] {
+  background-color: #45bf94;
+  border: 0;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+button[type=submit]:disabled {
+  background-color: #333;
+  color: #666;
+  cursor: default;
+}
