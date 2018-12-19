@@ -37,11 +37,11 @@
     <li>
       <label for="readOnStart">Started reading on</label>
       <my-date-picker name="readOnStart" [options]="myDatePickerOptions"
-                  formControlName="readOnStart" class="dpickr" (dateChanged)="onDateChanged($event)"></my-date-picker>
+                  formControlName="readOnStart" class="dpickr"></my-date-picker>
     </li>
     <li>
-        <label for="readOnFinish">Finished reading on</label>
-        <my-date-picker name="readOnFinish" [options]="myDatePickerOptions"
+      <label for="readOnFinish">Finished reading on</label>
+      <my-date-picker name="readOnFinish" [options]="myDatePickerOptions"
                     formControlName="readOnFinish" class="dpickr"></my-date-picker>
       </li>
       <li>

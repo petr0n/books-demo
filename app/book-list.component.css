@@ -28,19 +28,17 @@ section.books-wrapper {
   align-items: stretch;
 }
 section.books-wrapper > section {
+  align-items: center;
   display: flex;
   flex-flow: column wrap;
-  width: 30%;
-  /*
-  align-content: flex-start; */
+  width: 33.3%;
 }
 section.books-wrapper > section h3 {
-  border: 1px solid #c3c9e9;
-  border-radius: 3px;
+  border-bottom: 2px solid #c3c9e9;
   background-color: #eee;
   color: #373f47;
   font-size: .7em;
-  padding: 3px;
+  padding: 3px 20px;
   text-align: center;
 }
 section > .book {

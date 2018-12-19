@@ -23,6 +23,10 @@ export class BookService {
     return this.http.post('books', book);
   }
   
+  edit(book){
+    return this.http.post('books', book);
+  }
+
   delete(book) {
     return this.http.delete(`books/${book.id}`);
   }

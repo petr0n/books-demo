@@ -21,7 +21,7 @@ export class BookListComponent {
     this.activatedRoute.params
       .subscribe(params => {
         let bookType = params['bookType'];
-        let genre = params['genre'];
+        // let genre = params['genre'];
         if(bookType.toLowerCase() === 'all') {
           bookType = '';
         }

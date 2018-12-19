@@ -5,8 +5,8 @@ import { BookListComponent } from './book-list.component';
 
 const appRoutes: Routes = [
   { path: 'add', component: BookFormComponent },
+  { path: 'edit', component: BookFormComponent },
   { path: ':bookType', component: BookListComponent },
-  // { path: ':genre', component: BookListComponent },
   { path: '', pathMatch: 'full', redirectTo: 'all' }
 ];
 

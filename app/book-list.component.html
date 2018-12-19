@@ -1,6 +1,8 @@
+<!--
 <header [ngClass]="{'booktype-fic':bookType === 'Fiction', 'booktype-non-fic':bookType === 'Non-Fiction'}">
-	<h3>{{bookType}}</h3>
-	<h3>{{genre}}</h3>
+		<h3>{{bookType}}</h3>
+	<h3>{{genre}}</h3> -->
+<header>
 	<div class="genres">Currently in the queues: {{ books | genreList }}</div>
 </header>
 <section class="books-wrapper">

@@ -1,19 +1,4 @@
-/* RGB 
-$color1: rgba(159, 154, 164, 1);  gray        #1c1d21
-$color2: rgba(231, 207, 205, 1);  pink        #f1e3e4
-$color3: rgba(207, 216, 215, 1);  moss        #f9f7f3
-$color4: rgba(181, 201, 195, 1);  green       #b5c9c3
-$color5: rgba(202, 177, 189, 1);  dark-pink   #d81e5b
-*/
-
-/* RGB 
-$color1: rgba(28, 29, 33, 1);     darkgray  1c1d21
-$color2: rgba(15, 163, 177, 1);   teal      0fa3b1
-$color3: rgba(216, 30, 91, 1);    red       d81e5b
-$color4: rgba(249, 247, 243, 1);  offwhite  f9f7f3  
-$color5: rgba(241, 227, 228, 1);  pink      f1e3e4
-
-
+/* colors
 black     000011
 gray      ccc9dc
 darkgray  373f47
@@ -56,7 +41,7 @@ nav .icon {
   font-size: 2em;
 }
 .add-book {
-  background-color: #0fa3b1;
+  background-color: #6c91c2;
   height: 50px;
   right: 20px;
   border-radius: 50%;

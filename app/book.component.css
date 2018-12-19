@@ -1,25 +1,27 @@
 :host {
-  width: auto;
   height: auto;
-  border: 2px solid #6c91c2;
+  border: 1px solid #6c91c2;
   border-radius: 3px;
   background-color: #f9f7f3;
   padding: 10px;
   margin: .8em 0;
   color: #555;
   font-size: 0.8em;
+  width: 90%;
 }
 h2 {
   font-size: 1.6em;
+  cursor: pointer;
 }
-:host.booktype-fic,
-:host.booktype-non-fic {
-  border-color: #6c91c2;
-  color: #373f47;
+h2 i {
+  font-size: 16px;
+  display: none;
 }
-:host.booktype-fic > h2,
-:host.booktype-non-fic > h2 {
-  color: #1c1d21;
+h2:hover {
+  color: #6c91c2;
+}
+h2:hover i {
+  display: inline-block;
 }
 .tools {
   margin-top: 8px;
@@ -66,7 +68,7 @@ a.markAsStarted {
   padding: 4px;
   font-size: .8em;
   border-radius: 4px;
-  color: #6c91c2;
+  color: #000011;
   text-decoration: none;
   cursor: pointer;
 }

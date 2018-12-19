@@ -34,7 +34,7 @@ export class BookFormComponent {
       ])),
       genre: this.formBuilder.control(''),
       year: this.formBuilder.control('', this.yearValidator),
-      readOnStart: this.formBuilder.control(null, Validators.required),
+      readOnStart: this.formBuilder.control(null),
       readOnFinish: this.formBuilder.control(null)
     });
   }
@@ -70,31 +70,15 @@ export class BookFormComponent {
     this.form.patchValue([{
       readOnStart: {
         date:  date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()
-        //   month: date.getMonth() + 1,
-        //   day: date.getDate()}
-        // date: {
-        //   year: date.getFullYear(),
-        //   month: date.getMonth() + 1,
-        //   day: date.getDate()}
       },
       readOnFinish: {
         date:  date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()
-        // date: {
-        //   year: date.getFullYear(),
-        //   month: date.getMonth() + 1,
-        //   day: date.getDate()}
-        // }
       }
     }]);
   }
 
   clearDate(): void {
       this.form.patchValue([{readOnStart: null}, {readOnFinish: null}]);
-  }
-
-  onDateChanged(event: IMyDateModel) {
-    // console.log('onDateChanged(): ', event.date, ' - jsdate: ', new Date(event.jsdate).toLocaleDateString(), ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
-    console.log(this.form.value);
   }
 
 }
